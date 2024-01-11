@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Initial scene.unity
+    guid: a46e05ecd540bb34b94b4739ff395ebc
+  - enabled: 1
+    path: Assets/Scenes/Scond Scene.unity
+    guid: 55357f48a3e2b4643b0983826b854f64
+  - enabled: 1
+    path: Assets/Scenes/SimpleNaturePack_Demo.unity
+    guid: 5e7af4bd95ac53a4cb784a9eedf8f6f9
+  - enabled: 1
+    path: Assets/Scenes/World.unity
+    guid: a10f286a8f4bf408aac6dbbea9cb022a
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cee662033095a014da023fb34c3d0e27, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 532ad2ed6ab77a541aaf608f5679bee7, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d99881644647cd34b9924212356e96d2, type: 2}
