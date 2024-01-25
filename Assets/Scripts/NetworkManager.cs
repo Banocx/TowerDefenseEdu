@@ -90,7 +90,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             GameMode = GameMode.Shared,
             SessionName = "TestSession",
             SceneManager = GetComponent <NetworkSceneManagerDefault>(),
-            //Scene = 1
+            Scene = 1
         };
 
         var result = await SessionRunner.StartGame(args);
@@ -199,30 +199,5 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public void OnSceneLoadStart(NetworkRunner runner)
     {
         
-    }
-
-    public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
-    {
-        throw new NotImplementedException();
     }
 }

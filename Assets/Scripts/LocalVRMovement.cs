@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(CharacterController))]
-
 public class LocalVRMovement : MonoBehaviour
 {
     public float MovementSpeed;
@@ -58,18 +57,18 @@ public class LocalVRMovement : MonoBehaviour
         Vector3 direction = new Vector3(movement.x, 0, movement.y);
         direction = _headTransform.TransformDirection(direction);
         direction = Vector3.Scale(direction, new Vector3(1, 0, 1)).normalized;
-        _characterController.Move(direction * MovementSpeed * Time.deltaTime);
+        _characterController.Move(direction*MovementSpeed*Time.deltaTime);
     }
 
     private void Rotate()
     {
         Vector2 rotation = _rotateInput.action.ReadValue<Vector2>();
-        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y + rotation.x, 0) * RotationSpeed);
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y + rotation.x, 0)* RotationSpeed);
     }
 
     private void Gravity()
     {
-        if (_characterController.isGrounded)
+        if(_characterController.isGrounded)
         {
             _gravity = 0;
         }

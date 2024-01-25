@@ -414,12 +414,22 @@ namespace Photon.Voice.Fusion
         {
         }
 
+        public void OnDisconnectedFromServer(NetworkRunner runner)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data)
+        {
+            throw new NotImplementedException();
+        }
+
 #else
         void INetworkRunnerCallbacks.OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data)
         {
         }
 #endif
-#endregion
+        #endregion
     }
 }
 #endif

@@ -34,11 +34,6 @@ public class PlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
         
     }
 
-    public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
-    {
-        throw new NotImplementedException();
-    }
-
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)
     {
         
@@ -52,16 +47,6 @@ public class PlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     {
        
-    }
-
-    public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
-    {
-        throw new NotImplementedException();
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
@@ -79,19 +64,9 @@ public class PlayerSpawner : MonoBehaviour, INetworkRunnerCallbacks
         
     }
 
-    public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
-    {
-        throw new NotImplementedException();
-    }
-
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data)
     {
        
-    }
-
-    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data)
-    {
-        throw new NotImplementedException();
     }
 
     public void OnSceneLoadDone(NetworkRunner runner)
