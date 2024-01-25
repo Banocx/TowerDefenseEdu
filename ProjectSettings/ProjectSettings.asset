@@ -718,7 +718,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: ULTIMATEXR_USE_OCULUS_SDK
+    Android: ULTIMATEXR_USE_OCULUS_SDK;FUSION_WEAVER;FUSION2
     EmbeddedLinux: ULTIMATEXR_USE_OCULUS_SDK
     GameCoreScarlett: ULTIMATEXR_USE_OCULUS_SDK
     GameCoreXboxOne: ULTIMATEXR_USE_OCULUS_SDK
@@ -756,7 +756,7 @@ PlayerSettings:
     tvOS: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
-  allowUnsafeCode: 0
+  allowUnsafeCode: 1
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
   selectedPlatform: 2
@@ -825,7 +825,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -840,10 +846,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: eee5d963-e57c-4c40-abaf-244372b4cb10
+  cloudProjectId: 69e5e571-4278-495b-8021-486a09909183
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Tower defense 2024-01-08_13-38-42
+  projectName: Tower defense (1)
   organizationId: banocx
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

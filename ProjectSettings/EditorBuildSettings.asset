@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/IRONHEADGames/Scenes/LogInScene.unity
+    guid: 1757507b4ccaeb2408ec53bb4ed0a5a1
   - enabled: 1
     path: Assets/Scenes/Initial scene.unity
     guid: a46e05ecd540bb34b94b4739ff395ebc
