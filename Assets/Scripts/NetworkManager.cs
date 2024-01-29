@@ -42,16 +42,25 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     }
 
-    public void CreataRunner()
+    public void CreateRunner()
     {
-        SessionRunner = Instantiate(_runnerPrefab, transform).GetComponent<NetworkRunner>();
+        
 
-        SessionRunner.AddCallbacks(this);
+        if (_runnerPrefab != null)
+        {
+
+            SessionRunner = Instantiate(_runnerPrefab, transform).GetComponent<NetworkRunner>();
+        }
+        else
+        {
+            Debug.LogError("_runnerPrefab es null en networkManager");
+        }
+         SessionRunner.AddCallbacks(this);
     }
     private void Start()
     {
 
-        //StartSharedSession();
+        StartSharedSession();
     }
     void Update()
     {
@@ -75,7 +84,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             }
         }
         //Create Runner
-        CreataRunner();
+        CreateRunner();
 
         //Load Scene
         await LoadScene();
@@ -90,7 +99,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             GameMode = GameMode.Shared,
             SessionName = "TestSession",
             SceneManager = GetComponent<NetworkSceneManagerDefault>(),
-            //Scene = 1
+            
         };
 
         var result = await SessionRunner.StartGame(args);

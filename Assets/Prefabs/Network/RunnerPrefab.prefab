@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8068033649448922079}
   - component: {fileID: -1431466295132268005}
   - component: {fileID: 6017662655070078544}
+  - component: {fileID: -6790023370793970480}
   m_Layer: 0
   m_Name: RunnerPrefab
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prayerPrefab:
-    RawGuidValue: bf6c7944e9a6ca344b1891aa0e0df7a8
+    RawGuidValue: 7371b110498d57c41bf99e8d757062fd
 --- !u!114 &6017662655070078544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,3 +74,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInput: {fileID: 758638784364366073, guid: 58610f89d853df74dbb36a624ce44960, type: 3}
+--- !u!114 &-6790023370793970480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018881292951720959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8edbe7108d8a43ab838cf8b8d9453df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

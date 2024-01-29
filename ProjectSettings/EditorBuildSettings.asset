@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/IRONHEADGames/Scenes/LogInScene.unity
+    path: Assets/Scenes/LogInScene.unity
     guid: 1757507b4ccaeb2408ec53bb4ed0a5a1
   - enabled: 1
-    path: Assets/IRONHEADGames/Scenes/ArcadeHall.unity
+    path: Assets/Scenes/ArcadeHall.unity
     guid: d48da0ddabe0b9849971e263c73b4237
   - enabled: 1
     path: Assets/Scenes/Initial scene.unity
