@@ -5,7 +5,10 @@ using Fusion;
 using Fusion.Sockets;
 using System;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
 {
 
@@ -22,14 +25,22 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
     public Transform _rightHandTransform;
 
     #endregion
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         
         NetworkManager.Instance.SessionRunner.AddCallbacks(this);
    
+=======
+        NetworkManager.Instance.SessionRunner.AddCallbacks(this);
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     // Update is called once per frame
@@ -66,77 +77,134 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
     #region UnusedRunnerCallbacks 
     public void OnConnectedToServer(NetworkRunner runner)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnDisconnectedFromServer(NetworkRunner runner)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnSceneLoadDone(NetworkRunner runner)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnSceneLoadStart(NetworkRunner runner)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
     {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)
     {
+<<<<<<< HEAD
 
     }
 
@@ -162,6 +230,8 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
     {
+=======
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
         
     }
     #endregion
@@ -190,4 +260,8 @@ public struct XRRigInputData : INetworkInput
 
     public Vector3 RightHandPosition;
     public Quaternion RightHandRotation;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e

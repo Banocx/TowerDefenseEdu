@@ -29,7 +29,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         }
     }
 
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 
     public async Task LoadScene()
     {
@@ -39,6 +43,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         {
             await Task.Yield();
         }
+<<<<<<< HEAD
 
     }
 
@@ -65,26 +70,60 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     void Update()
     {
 
+=======
+                
+    }
+
+    public void CreataRunner()
+    {
+        SessionRunner = Instantiate(_runnerPrefab, transform).GetComponent<NetworkRunner>();
+
+        SessionRunner.AddCallbacks(this);
+    }
+   private void Start()
+    {
+
+        //StartSharedSession();
+    }
+    void Update()
+    {
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
 
     public async void StartSharedSession(string SessionName = "")
     {
 
+<<<<<<< HEAD
         if (SessionName == "")
         {
             SessionName = GenerateSessionCode();
         }
         else
+=======
+        if(SessionName == "")
+        {
+            SessionName = GenerateSessionCode();
+        }
+        else 
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
         {
             if (SessionName.Length != 4)
             {
                 Debug.LogError("Wrong Session Name");
                 return;
+<<<<<<< HEAD
             }
         }
         //Create Runner
         CreateRunner();
+=======
+            } 
+        }
+        //Create Runner
+        CreataRunner();
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 
         //Load Scene
         await LoadScene();
@@ -98,8 +137,13 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         {
             GameMode = GameMode.Shared,
             SessionName = "TestSession",
+<<<<<<< HEAD
             SceneManager = GetComponent<NetworkSceneManagerDefault>(),
             
+=======
+            SceneManager = GetComponent <NetworkSceneManagerDefault>(),
+            Scene = 1
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
         };
 
         var result = await SessionRunner.StartGame(args);
@@ -114,7 +158,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         }
 
 
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     string GenerateSessionCode(int length = 4)
@@ -128,11 +176,16 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         Debug.Log("Session Code: " + code);
         return code;
     }
+<<<<<<< HEAD
+=======
+    // Start is called before the first frame update
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log("A new player joined the session");
     }
+<<<<<<< HEAD
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
     {
         Debug.Log("Runner Shutdown");
@@ -165,13 +218,21 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
 
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)
+=======
+
+    public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     {
         
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
+<<<<<<< HEAD
        
+=======
+        
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
@@ -179,23 +240,46 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         
     }
 
+<<<<<<< HEAD
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
+=======
+    public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
+    {
+        Debug.Log("Runner Shutdown");
+    }
+
+    public void OnConnectedToServer(NetworkRunner runner)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     {
         
     }
 
+<<<<<<< HEAD
     public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
+=======
+    public void OnDisconnectedFromServer(NetworkRunner runner)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     {
         
     }
 
+<<<<<<< HEAD
    
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
+=======
+    public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)
+    {
+       
+    }
+
+    public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     {
         
     }
 
+<<<<<<< HEAD
     public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
     {
         
@@ -212,6 +296,9 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
 
     public void OnSceneLoadStart(NetworkRunner runner)
+=======
+    public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     {
         
     }
@@ -221,6 +308,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         
     }
 
+<<<<<<< HEAD
     
 
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)
@@ -228,4 +316,30 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         
     }
     #endregion
+=======
+    public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data)
+    {
+       
+    }
+
+    public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)
+    {
+        
+    }
+
+    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data)
+    {
+        
+    }
+
+    public void OnSceneLoadDone(NetworkRunner runner)
+    {
+       
+    }
+
+    public void OnSceneLoadStart(NetworkRunner runner)
+    {
+        
+    }
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
 }

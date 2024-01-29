@@ -5,6 +5,10 @@ using Fusion;
 
 public class NetworkRig : NetworkBehaviour
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     public bool IsLocalNetworkRig => Object.HasStateAuthority;
 
     [Header("RigVisuals")]
@@ -39,7 +43,11 @@ public class NetworkRig : NetworkBehaviour
         if (IsLocalNetworkRig)
         {
             _hardwareRig = FindObjectOfType<HardwareRig>();
+<<<<<<< HEAD
             if (_hardwareRig == null)
+=======
+            if(_hardwareRig== null)
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
             {
                 Debug.LogError("Missing Hardware Rig in the Scene");
             }
@@ -71,6 +79,7 @@ public class NetworkRig : NetworkBehaviour
         }
     }
 
+<<<<<<< HEAD
     //public override void Render()
     //{
     //    base.Render();
@@ -89,12 +98,15 @@ public class NetworkRig : NetworkBehaviour
     //    }
 
     //}
+=======
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     public override void Render()
     {
         base.Render();
 
         if (IsLocalNetworkRig)
         {
+<<<<<<< HEAD
             _headTransform.transform.SetPositionAndRotation(_hardwareRig._headTransform.position, _hardwareRig._headTransform.rotation);
 
             _characterTransform.transform.SetPositionAndRotation(_hardwareRig._characterTransform.position, _hardwareRig._characterTransform.rotation);
@@ -105,5 +117,18 @@ public class NetworkRig : NetworkBehaviour
 
             _rightHandTransform.transform.SetPositionAndRotation(_hardwareRig._rightHandTransform.position, _hardwareRig._rightHandTransform.rotation);
         }
+=======
+            _headTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._headTransform.position, _hardwareRig._headTransform.rotation);
+
+            _characterTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._characterTransform.position, _hardwareRig._characterTransform.rotation);
+
+            _bodyTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._bodyTransform.position, _hardwareRig._bodyTransform.rotation);
+
+            _leftHandTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._leftHandTransform.position, _hardwareRig._leftHandTransform.rotation);
+
+            _rightHandTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._rightHandTransform.position, _hardwareRig._rightHandTransform.rotation);
+        }
+
+>>>>>>> a091d6b10fed516af13e7d9bdd51080c8b79535e
     }
 }
