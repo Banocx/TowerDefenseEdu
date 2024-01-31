@@ -136,10 +136,10 @@ PlayerSettings:
     Others: 1
   bundleVersion: 0.1
   preloadedAssets:
-  - {fileID: 11400000, guid: cee662033095a014da023fb34c3d0e27, type: 2}
   - {fileID: 11400000, guid: 79ad894f48cb5c24f8c50ed9e0652b6d, type: 2}
+  - {fileID: 11400000, guid: cee662033095a014da023fb34c3d0e27, type: 2}
   - {fileID: -5203067956124379682, guid: 532ad2ed6ab77a541aaf608f5679bee7, type: 2}
-  - {fileID: 4684269038522445142, guid: d99881644647cd34b9924212356e96d2, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -429,6 +429,9 @@ PlayerSettings:
     m_Automatic: 0
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
+    m_Automatic: 0
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 02000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16

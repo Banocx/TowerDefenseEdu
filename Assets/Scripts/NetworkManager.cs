@@ -60,7 +60,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     private void Start()
     {
 
-        StartSharedSession();
+        // StartSharedSession();
     }
     void Update()
     {

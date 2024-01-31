@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   RotationSpeed: 1
-  _headTransform: {fileID: 0}
+  _headTransform: {fileID: 5348618368067631436}
   _moveInput: {fileID: -6368965924062198418, guid: 58610f89d853df74dbb36a624ce44960, type: 3}
   _rotateInput: {fileID: 2805901790196205424, guid: 58610f89d853df74dbb36a624ce44960, type: 3}
 --- !u!114 &6714970684039423057
@@ -948,7 +948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: _trackingOriginType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4593680705043960, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x

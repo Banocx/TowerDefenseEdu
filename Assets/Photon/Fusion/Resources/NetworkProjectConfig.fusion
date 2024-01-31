@@ -60,7 +60,6 @@
         "Fusion.Unity",
         "Assembly-CSharp",
         "Assembly-CSharp-firstpass",
-        "Fusion.Addons.Physics",
         "PhotonVoice.Fusion"
     ],
     "UseSerializableDictionary": true,
