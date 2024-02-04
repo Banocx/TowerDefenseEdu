@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6936583134508999927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6936583134508999926}
+  - component: {fileID: 6936583134508999925}
+  m_Layer: 0
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6936583134508999926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936583134508999927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.1, y: 2.5, z: 22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6936583134508999925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936583134508999927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3306a7364b23b3849812eed2eef03bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0.4
+  difficultyIncreaseSpeed: 0.01
+  startPosition: {fileID: 0}
+  ballonGreen: {fileID: 8715134970765030219, guid: 854b1da99dcf4ee43b980aceaaa00e03, type: 3}
+  ballonBlue: {fileID: 8946428732679168337, guid: 206a6e87208fdb0478242441c2bbeaac, type: 3}
+  ballonRed: {fileID: 9223059565736251184, guid: 623255d06f6fba345928d14321a444f4, type: 3}
+  ballonYellow: {fileID: 4159429104149403643, guid: 4ca5924bcff008d49848c7ee8007d702, type: 3}
+  ballonPink: {fileID: 1781307341989014275, guid: 246f0b91aa8ef4341b6b582628a00de3, type: 3}
+  ballonsPerWave: 20
+  waveTimer: 0
+  nextWave: 20

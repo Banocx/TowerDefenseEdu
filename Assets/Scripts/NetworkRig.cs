@@ -71,24 +71,7 @@ public class NetworkRig : NetworkBehaviour
         }
     }
 
-    //public override void Render()
-    //{
-    //    base.Render();
-
-    //    if (IsLocalNetworkRig)
-    //    {
-    //        _headTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._headTransform.position, _hardwareRig._headTransform.rotation);
-
-    //        _characterTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._characterTransform.position, _hardwareRig._characterTransform.rotation);
-
-    //        _bodyTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._bodyTransform.position, _hardwareRig._bodyTransform.rotation);
-
-    //        _leftHandTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._leftHandTransform.position, _hardwareRig._leftHandTransform.rotation);
-
-    //        _rightHandTransform.InterpolationTarget.SetPositionAndRotation(_hardwareRig._rightHandTransform.position, _hardwareRig._rightHandTransform.rotation);
-    //    }
-
-    //}
+    
     public override void Render()
     {
         base.Render();

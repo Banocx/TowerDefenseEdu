@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
 using Fusion.Sockets;
 using System;
-using UnityEngine.SceneManagement;
 
 public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 {
     public static NetworkManager Instance { get; private set; }
-    //Awake 
     public NetworkRunner SessionRunner { get; private set; }
 
     [SerializeField]
     private GameObject _runnerPrefab;
 
+    
+   
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -27,9 +28,9 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+
+        
     }
-
-
 
     public async Task LoadScene()
     {
@@ -39,67 +40,41 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         {
             await Task.Yield();
         }
-
     }
 
     public void CreateRunner()
     {
-        
-
         if (_runnerPrefab != null)
         {
-
             SessionRunner = Instantiate(_runnerPrefab, transform).GetComponent<NetworkRunner>();
         }
         else
         {
             Debug.LogError("_runnerPrefab es null en networkManager");
         }
-         SessionRunner.AddCallbacks(this);
+        SessionRunner.AddCallbacks(this);
     }
-    private void Start()
+
+    #region Instanciar elementos
+
+   //Función asincrona de spawn de objetos 
+    public GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
     {
+        // Lógica de instanciación del objeto aquí
+        GameObject instantiatedObject = Instantiate(prefab, position, rotation);
 
-        // StartSharedSession();
+        // Devolver el objeto instanciado
+        return instantiatedObject;
     }
-    void Update()
-    {
 
-    }
-
-
-    public async void StartSharedSession(string SessionName = "")
-    {
-
-        if (SessionName == "")
-        {
-            SessionName = GenerateSessionCode();
-        }
-        else
-        {
-            if (SessionName.Length != 4)
-            {
-                Debug.LogError("Wrong Session Name");
-                return;
-            }
-        }
-        //Create Runner
-        CreateRunner();
-
-        //Load Scene
-        await LoadScene();
-
-        //Conectsession
-        await Connect(SessionName);
-    }
-    private async Task Connect(String SessionName)
+    #endregion
+    private async Task Connect(string sessionName)
     {
         var args = new StartGameArgs()
         {
             GameMode = GameMode.Shared,
-            SessionName = "TestSession",
+            SessionName = sessionName,
             SceneManager = GetComponent<NetworkSceneManagerDefault>(),
-            
         };
 
         var result = await SessionRunner.StartGame(args);
@@ -112,9 +87,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         {
             Debug.LogError(result.ErrorMessage);
         }
-
-
-
     }
 
     string GenerateSessionCode(int length = 4)
@@ -129,14 +101,49 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         return code;
     }
 
+    public async void StartSharedSession(string sessionName = "")
+    {
+        if (sessionName == "")
+        {
+            sessionName = GenerateSessionCode();
+        }
+        else
+        {
+            if (sessionName.Length != 4)
+            {
+                Debug.LogError("Wrong Session Name");
+                return;
+            }
+        }
+
+        // Create Runner
+        CreateRunner();
+
+        // Load Scene
+        await LoadScene();
+
+        // Connect session
+        await Connect(sessionName);
+    }
+
+
+
+
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log("A new player joined the session");
+         
+        
     }
+
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
     {
         Debug.Log("Runner Shutdown");
     }
+
+
+
+
 
     #region UnussedCalbacks
     public void OnConnectedToServer(NetworkRunner runner)
@@ -229,3 +236,4 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     }
     #endregion
 }
+

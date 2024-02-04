@@ -337,9 +337,10 @@ GameObject:
   - component: {fileID: 341098310522966562}
   - component: {fileID: 1148265537245982679}
   - component: {fileID: 1539039887996361478}
+  - component: {fileID: -4763652402547928192}
   m_Layer: 0
   m_Name: balloonPink
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,7 +402,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781307341989014275}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.63
   m_Height: 7.69
@@ -441,6 +442,26 @@ MonoBehaviour:
   - {fileID: 0}
   healt: 1
   speed: 5
+  destroyDistance: 0.5
+  endPointTag: EndPoint
+--- !u!114 &-4763652402547928192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781307341989014275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 4005045843
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1539039887996361478}
 --- !u!1 &2251491431780988956
 GameObject:
   m_ObjectHideFlags: 0

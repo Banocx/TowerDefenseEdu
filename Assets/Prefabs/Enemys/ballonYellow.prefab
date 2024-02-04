@@ -420,9 +420,10 @@ GameObject:
   - component: {fileID: 2718740644872253146}
   - component: {fileID: 3381726413050434351}
   - component: {fileID: 3772608781286762494}
+  - component: {fileID: -3342800691416579779}
   m_Layer: 0
   m_Name: ballonYellow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +485,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4159429104149403643}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.63
   m_Height: 7.69
@@ -524,6 +525,26 @@ MonoBehaviour:
   - {fileID: 0}
   healt: 2
   speed: 5
+  destroyDistance: 0.5
+  endPointTag: EndPoint
+--- !u!114 &-3342800691416579779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159429104149403643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 553625996
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 3772608781286762494}
 --- !u!1 &4159429104367260829
 GameObject:
   m_ObjectHideFlags: 0

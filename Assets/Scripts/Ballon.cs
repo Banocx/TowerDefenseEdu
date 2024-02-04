@@ -1,17 +1,27 @@
+using Fusion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-public class Ballon : MonoBehaviour
+
+public class Ballon : NetworkBehaviour
 {
     public GameObject[] waypoints;
     private int nextWayPointIndex=0;
-    public int healt = 1;
-    public int speed = 1;
+    
     private Break_Ghost breakGhostScript;
     private Material m_Material;
+
+    public float destroyDistance = 0.5f; // Distancia a la que se destruirá el globo
+    public string endPointTag = "EndPoint"; // Tag del cubo de destino
+    public static event Action<int> OnEnemyDestroyed; // Evento que notifica cuando un enemigo es destruido
+
+    public static Ballon instance;
+    public int healt = 1;
+    public int speed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +57,7 @@ public class Ballon : MonoBehaviour
     }
 
 
+
     //make a coparation name by name
     private int CompareObNames(GameObject x, GameObject y)
     {
@@ -75,12 +86,27 @@ public class Ballon : MonoBehaviour
                     breakGhostScript.Is_Breaked = true;
 
                     // Llama al método para destruir el objeto después de 4 segundos
-                    Invoke("DestruirObjeto", 3f);
+                    Invoke("DestruirObjeto", 2f);
+
+
+                    // Incrementar el contador de enemigos destruidos
+                    OnEnemyDestroyed?.Invoke(1);
+
+                    // Incrementar el contador local del DartGun
+                    FindObjectOfType<DartGun>()?.IncrementEnemiesDestroyedNetwork();
+
+
                 }
                 else
                 {
-                    // Destruye el objeto 
-                    Destroy(this.gameObject);
+                                      
+                    // Llama al método para destruir el objeto después de 2 segundos
+                    Invoke("DestruirObjeto", 2f);
+
+                    // Incrementar el contador local del DartGun
+                    FindObjectOfType<DartGun>()?.IncrementEnemiesDestroyedNetwork();
+
+
                 }
 
 
@@ -93,9 +119,10 @@ public class Ballon : MonoBehaviour
         // Destruye el objeto 
         Destroy(this.gameObject);
     }
+    
     private void MoveBallon()
     {
-        //Verificar que haya waypoints
+        // Verificar que haya waypoints
         if (waypoints == null || waypoints.Length == 0)
         {
             Debug.LogError("Waypoints array is null or empty.");
@@ -115,17 +142,17 @@ public class Ballon : MonoBehaviour
             Vector3 lastWayPoint = waypoints[lastWayPointIndex].transform.position + new Vector3(0, 2, 0);
             Vector3 nextWayPoint = waypoints[nextWayPointIndex].transform.position + new Vector3(0, 2, 0);
             Vector3 direction = nextWayPoint - transform.position;
-            //If enemy is more than 0.1 meters from the last Waypoint
+
+            // If enemy is more than 0.1 meters from the last Waypoint
             if (Vector3.Distance(transform.position, nextWayPoint) < 0.5f && nextWayPointIndex < lastWayPointIndex)
             {
                 nextWayPointIndex++;
-
             }
 
-            //Increase  index so if enemy reaches one waypoint
+            // Increase index so if enemy reaches one waypoint
             if (Vector3.Distance(transform.position, lastWayPoint) > 0.1f)
             {
-                //Keep moving to nex waypoint
+                // Keep moving to next waypoint
                 transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
 
                 // Calcula la rotación para mirar en la dirección deseada
@@ -133,16 +160,23 @@ public class Ballon : MonoBehaviour
 
                 // Aplica la rotación al objeto
                 transform.rotation = newRotation;
-
             }
 
-
+            // Comprueba si el globo ha alcanzado el último waypoint
             if (nextWayPointIndex == lastWayPointIndex && Vector3.Distance(transform.position, lastWayPoint) < 0.5f)
             {
                 Destroy(this.gameObject);
             }
-        }
 
+            Collider[] colliders = Physics.OverlapSphere(transform.position, destroyDistance);
+            foreach (Collider collider in colliders)
+            {
+                if (collider.CompareTag(endPointTag))
+                {
+                    Destroy(this.gameObject);
+                    return; // Sale del método si se destruye el globo
+                }
+            }
+        }
     }
-    
 }

@@ -7,11 +7,14 @@ TagManager:
   - Dart
   - Waypoints
   - Waypoints2
+  - EndPoint
+  - InteractiveUI
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoVisible
   - Water
   - UI
   - 
@@ -43,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NoVisible
+    uniqueID: 3535603365
     locked: 0
